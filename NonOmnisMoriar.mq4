@@ -29,7 +29,7 @@ int OnInit()
    _midContext = new Context(Symbol(), midTF);
    _highContext = new Context(Symbol(), highTF);
    
-   EventSetTimer(1);
+   EventSetTimer(5);
    
    return(INIT_SUCCEEDED);
 }
@@ -52,6 +52,10 @@ void OnTimer()
    if(IsNewBar(Symbol(), highTF)) {
       Print(EnumToString(highTF), ", bullish bias: ", _highContext.BullishBias(), ", fast ma slope: ", _highContext.FastMaSlope(), ", slow ma slope: ", _highContext.SlowMaSlope());
    }
+   
+   Print("low context, current trend: ", EnumToString(_lowContext.CurrentTrend()));
+   Print("mid context, current trend: ", EnumToString(_midContext.CurrentTrend()));
+   Print("high context, current trend: ", EnumToString(_highContext.CurrentTrend()));
 }
 //*****************************************************************************************************************************************************
 void OnTick()
