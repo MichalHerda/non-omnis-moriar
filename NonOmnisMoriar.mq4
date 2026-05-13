@@ -54,7 +54,7 @@ void OnTimer()
       Print(EnumToString(highTF), ", bullish bias: ", _highContext.BullishBias(), ", fast ma slope: ", _highContext.FastMaSlope(), ", slow ma slope: ", _highContext.SlowMaSlope());
    }
    */
-   Print(Symbol(), ", ", EnumToString(lowTF), ", context: ", _lowContext.CurrentContext(), ", span: ", _lowContext.Span());
+   Print(Symbol(), ", ", EnumToString(lowTF), ", context: ", _lowContext.CurrentContext(), ", span: ", _lowContext.Span(), ", bias duration: ", _lowContext.BiasDuration(), ", trend duration: ", _lowContext.TrendDuration());
    //Print("low context, current trend: ", EnumToString(_lowContext.CurrentTrend()), ", dev ATR: ", _lowContext.EmaDeviationATR());
    //Print("mid context, current trend: ", EnumToString(_midContext.CurrentTrend()), ", dev ATR: ", _midContext.EmaDeviationATR());
    //Print("high context, current trend: ", EnumToString(_highContext.CurrentTrend()), ", dev ATR: ", _highContext.EmaDeviationATR());
