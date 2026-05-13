@@ -20,7 +20,7 @@ datetime _lastHighTFBar;
 //*****************************************************************************************************************************************************
 int OnInit()
 {
-   Print("NonOmnisMoriar - 2026.05.08");
+   Print("NonOmnisMoriar - 2026.05.13");
    _lastLowTFBar  = iTime(Symbol(), lowTF, 0);
    _lastMidTFBar  = iTime(Symbol(), midTF, 0);
    _lastHighTFBar = iTime(Symbol(), highTF, 0);
@@ -43,6 +43,7 @@ void OnDeinit(const int reason)
 //*****************************************************************************************************************************************************
 void OnTimer()
 {
+   /*
    if(IsNewBar(Symbol(), lowTF)) {
       Print(EnumToString(lowTF), ", bullish bias: ", _lowContext.BullishBias(), ", fast ma slope: ", _lowContext.FastMaSlope(), ", slow ma slope: ", _lowContext.SlowMaSlope());
    }
@@ -52,10 +53,11 @@ void OnTimer()
    if(IsNewBar(Symbol(), highTF)) {
       Print(EnumToString(highTF), ", bullish bias: ", _highContext.BullishBias(), ", fast ma slope: ", _highContext.FastMaSlope(), ", slow ma slope: ", _highContext.SlowMaSlope());
    }
-   
-   Print("low context, current trend: ", EnumToString(_lowContext.CurrentTrend()));
-   Print("mid context, current trend: ", EnumToString(_midContext.CurrentTrend()));
-   Print("high context, current trend: ", EnumToString(_highContext.CurrentTrend()));
+   */
+   Print(Symbol(), ", ", EnumToString(lowTF), ", context: ", _lowContext.CurrentContext(), ", span: ", _lowContext.Span());
+   //Print("low context, current trend: ", EnumToString(_lowContext.CurrentTrend()), ", dev ATR: ", _lowContext.EmaDeviationATR());
+   //Print("mid context, current trend: ", EnumToString(_midContext.CurrentTrend()), ", dev ATR: ", _midContext.EmaDeviationATR());
+   //Print("high context, current trend: ", EnumToString(_highContext.CurrentTrend()), ", dev ATR: ", _highContext.EmaDeviationATR());
 }
 //*****************************************************************************************************************************************************
 void OnTick()
